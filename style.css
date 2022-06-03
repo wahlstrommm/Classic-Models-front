@@ -1,0 +1,158 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  width: 100%;
+  background: #110904;
+  box-shadow: var(--nav-shadow);
+  z-index: 999;
+}
+
+nav ul {
+  --padding: 20px;
+  --font-size: 17px;
+
+  list-style: none;
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size);
+  overflow-y: hidden;
+  transition: 1s cubic-bezier(0.68, -0.55, 0.27, 10.55);
+  box-shadow: var(--nav-shadow);
+}
+
+nav ul li {
+  padding: var(--padding);
+  font-family: 'Poppins', 'sans-serif';
+  color: rgb(255, 255, 255);
+}
+
+nav ul li a {
+  color: #f9f9f9;
+  text-decoration: none;
+  position: relative;
+  font-family: 'Poppins', 'sans-serif';
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0%;
+  height: 1.7px;
+  border-radius: 99px;
+  background: var(--main-clr);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav .menu {
+  width: 22px;
+  height: 16px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  margin: 20px;
+  left: 20%;
+}
+
+nav .menu span {
+  width: 100%;
+  height: 2px;
+  border-radius: 99px;
+  background: #f9f9f9;
+  transition: 0.3s ease;
+  transform-origin: left;
+}
+
+nav .menu.active span {
+  background: var(--main-clr);
+  background-color: #f9f9f9;
+}
+
+nav .menu.active span:nth-child(1) {
+  transform: rotate(40deg);
+}
+
+nav .menu span:nth-child(3) {
+  transform-origin: left;
+}
+
+nav .menu.active span:nth-child(3) {
+  transform: rotate(-40deg);
+}
+
+nav .menu.active span:nth-child(2) {
+  transform: scale(0);
+}
+
+nav .menu {
+  display: flex;
+}
+
+nav ul {
+  --height: 0px;
+
+  flex-direction: column;
+  background: var(--nav-bg);
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 56px;
+  height: var(--height);
+  transition: 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+nav ul.active {
+  --height: calc((((var(--padding) * 2) + (var(--font-size) * 1.5))) * var(--childenNumber));
+
+  transition: 1s ease;
+}
+
+nav ul li {
+  width: 100%;
+  text-align: center;
+  background-color: #110904;
+}
+nav ul li a {
+  width: 100%;
+  text-transform: capitalize;
+  color: #f9f9f9;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+main {
+  height: 120vh;
+  background-color: rgb(94, 175, 175);
+}
+#sectionMain {
+  text-align: center;
+  top: 100px;
+  position: relative;
+}
+#section {
+  position: relative;
+  text-align: center;
+  top: 100px;
+}
+.btn {
+  background: #15d798;
+  border: 1px solid #556699;
+  border-radius: 11px;
+  box-shadow: 0 1px #444444;
+  padding: 20px 46px;
+  color: #ffffff;
+  display: inline-block;
+  font: normal bold 12px/1 'Ubuntu', sans-serif;
+  text-align: center;
+}
